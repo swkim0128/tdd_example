@@ -113,3 +113,9 @@ describe("Product Controller GetById", () => {
         expect(next).toHaveBeenCalledWith(errorMessage)
     })
 })
+
+describe("Product Controller Update", () => {
+    it("should have an updateProduct function", () => {
+        expect(typeof productController.updateProduct).toBe("function")
+    })
+})
