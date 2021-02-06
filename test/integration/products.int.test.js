@@ -70,6 +70,7 @@ it("DELETE /api/products", async () => {
 
 it("DELETE id doenst exist /api/products/:productId", async () => {
     const res = await request(app)
-            .delete("/api/products/60154dacea599503796a2899");
+            .delete("/api/products/60154dacea599503796a2899")
+            .send();
     expect(res.statusCode).toBe(404);
 })
