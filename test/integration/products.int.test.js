@@ -59,3 +59,18 @@ it("PUT id doenst exist /api/products/:productId", async () => {
             .send({ name: "updated name", description: "updated description" });
     expect(res.statusCode).toBe(404);
 })
+
+it("DELETE /api/products", async () => {
+    const res = await request(app)
+            .delete("/api/products/" + firstProduct._id)
+            .send();
+
+    expect(res.statusCode).toBe(200)
+})
+
+it("DELETE id doenst exist /api/products/:productId", async () => {
+    const res = await request(app)
+            .delete("/api/products/60154dacea599503796a2899")
+            .send();
+    expect(res.statusCode).toBe(404);
+})
